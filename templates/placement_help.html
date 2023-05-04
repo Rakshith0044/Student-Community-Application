@@ -1,0 +1,210 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Home</title>
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+	<style>
+		a{
+			text-decoration: none;
+		}
+		ul li{
+			font-size: 15px;
+		}
+
+		.btn-close-width{
+			width: 2px;
+			height: 10px;
+			margin: 0px 0px 0px 4px;
+		}
+		input{
+			width: 100%;
+		}
+
+	</style>
+</head>
+<body class="bg-dark">
+	{% if flag %}
+<script>
+    alert("{{ message1 }}");
+</script>
+{% endif %}
+
+<body class="bg-dark">
+	{% if isTags %}
+<script>
+    alert("{{ message2 }}");
+</script>
+{% endif %}
+	<nav class="navbar navbar-dark navbar-expand-md bg-dark shadow">
+	  <div class="container">
+	    <a class="navbar-brand" href="#">Student Community</a>
+	    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+	      <span class="navbar-toggler-icon"></span>
+	    </button>
+	    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+	      <ul class="navbar-nav me-5 mb-2 mb-lg-0 d-md-none ">
+	        <li class="nav-item">
+	          <a class="nav-link " aria-current="page" href="/home">Home</a>
+	        </li>
+	        <li class="nav-item">
+	          <a class="nav-link" href="profile">Profile</a>
+	        </li>
+	        <li class="nav-item">
+	          <a class="nav-link" href="/announcements">Announcements</a>
+	        </li>
+	        <li class="nav-item">
+	          <a class="nav-link">FAQ</a>
+	        </li>
+	        <li class="nav-item">
+	          <a class="nav-link">Help</a>
+	        </li>
+	      </ul>
+	      <form class="d-flex mx-auto col-lg-4 mb-2" method="POST" action="searchPlacement" autocomplete="off">{%csrf_token%}
+	        <input type="text" class="form-control ms-lg-5" name="tagSearch"  placeholder="Search" aria-label="Search">
+			<input  type="submit" class="btn btn-primary  col-3"  value="Search">
+	      </form>
+	      <ul class="navbar-nav mb-2 mb-lg-0 ms-auto">
+	      	<li>
+	      		<button class="btn btn-outline-danger" type="submit"><a class="dropdown-item" href="/">LogOut</a></button>
+	      	</li>
+	      </ul>
+	    </div>
+	  </div>
+	</nav>
+	<div class="container">
+		<div class="row ">
+			<div class="d-flex flex-column col-md-3 col-lg-2 bg-dark d-none d-md-block border-end border-primary">
+				<div class="sticky-top">
+				    <hr class="text-light">
+				    <ul class="nav nav-pills flex-column">
+				      <li class="nav-item">
+				        <a href="/home" class="nav-link " aria-current="page">
+				          Home
+				        </a>
+				      </li>
+				      <li>
+				        <a href="profile" class="nav-link text-white">
+				          
+				          Profile
+				        </a>
+				      </li>
+				      <li>
+				        <a href="/announcements" class="nav-link text-white">
+				         
+				          Announcements
+				        </a>
+				      </li>
+				      <li>
+				        <a href="#" class="nav-link text-white">
+				          
+				          FAQ
+				        </a>
+				      </li>
+				      <li>
+				        <a href="#" class="nav-link text-white">
+				          
+				          Help
+				        </a>
+				      </li>
+				    </ul>
+				    <div class="dropdown p-3">
+				      <hr class="text-light">
+				      <a href="#" class="d-flex align-items-center text-white text-decoration-none dropdown-toggle" id="dropdownUser1" data-bs-toggle="dropdown" aria-expanded="false">
+				        <img src="https://github.com/mdo.png" alt="" width="32" height="32" class="rounded-circle me-2">
+				        <p>{{name}}</p>
+				      </a>
+				      <ul class="dropdown-menu dropdown-menu-dark text-small shadow" aria-labelledby="dropdownUser1">
+				        <li><a class="dropdown-item" href="/editprofile">Settings</a></li>
+				        <li><hr class="dropdown-divider"></li>
+				        <li><a class="dropdown-item" href="/">Sign out</a></li>
+				      </ul>
+				    </div>
+				</div>   
+			    
+			</div>
+			<div class="column col-md-9 col-lg-10 p-3 bg-dark">
+				<nav class=" nav nav-pills flex-column flex-sm-row" >
+				  <a class="flex-sm-fill text-center nav-link active  m-2 bg-secondary text-light p-4" aria-current="page" href="/home">General Questions</a>
+				  <a class="flex-sm-fill text-center nav-link m-2 bg-secondary text-light p-4" href="/interview_experience">Interview Experience</a>
+				  <a class="flex-sm-fill text-center nav-link  m-2 p-4 active" href="/placement_help">Placement Help</a>
+				</nav>
+
+
+
+				<div class="text-center">
+					<button class="btn btn-warning active col-6 m-3 p-3" type="button" data-bs-toggle="collapse" data-bs-target="#AskQ" aria-expanded="false" aria-controls="collapseExample">
+				     Ask A Question
+				    </button>
+					<div class="collapse bg-light border border-primary text-dark rounded m-3 p-2 text-start" id="AskQ">
+					<p class="display-6 fs-3 mb-3 text-center">Ask A Question!</p>
+					<form class="mb-1" method="POST" action="placement_help" >{%csrf_token%}
+						<div class="mb-1">
+						  <label for="exampleFormControlInput1" class="form-label fs-5"><strong>Title</strong></label><br>
+						  <small class="text-muted fw-semibold">Be Specific and short</small>
+						  <input type="text" name="title" class="form-control" id="exampleFormControlInput1" placeholder="Enter Title">
+						</div>
+						<input type="hidden" name="catg_id" value="3" >
+						<div class="mb-3">
+						  <label for="exampleFormControlTextarea1" class="form-label fs-5"><strong>Description</strong></label><br>
+						  <small class="text-muted fw-semibold">Introduce the problem and expand on what you put in the title</small>
+						  <textarea class="form-control" name="content" id="exampleFormControlTextarea1" rows="3"></textarea>
+						</div>
+						<div class="mb-3">
+						  <label for="exampleFormControlTextarea1" class="form-label fs-5"><strong>Tags</strong></label><br>
+						  <small class="text-muted fw-semibold">Add Upto 10 Relevant tags seperated by space</small>
+						  
+						  <div class="d-flex border border-dark p-1 rounded rounded-2">
+						  	<ul class="list-unstyled align-items-center d-flex flex-grow-1 flex-wrap" id="tags">
+						  		<input name="hashtags" type="text" class="m-2 border-0 p-3 rounded rounded-2" placeholder="Enter Tags">
+						  	</ul>
+						  </div>
+
+						</div>
+						<div class="text-center">
+							<input  type="submit" class="btn btn-primary  col-3" value="Ask">
+						</div>
+					</form>
+				</div>
+				</div>
+
+				{% for id,title,description,like,date,name,count in data %}
+				<hr class="text-light">
+				<div class="row bg-dark text-light rounded m-3 p-2 border border-primary">
+					<div class=" col-3 p-2 col-lg-1">
+						<p>{{like}}<br>Votes</p>
+						<p>{{count}}<br>Answers</p>
+
+					</div>
+					<div class="column col-9 col-lg-10 border-start border-primary ms-lg-3">
+						<div>
+							<a href="http://127.0.0.1:8000/answer/{{id}}" class="h4">{{title}}</a>
+						</div>
+						<hr>
+						<div class="text-light"> 
+							<p class="text-break">{{description}}<a href="http://127.0.0.1:8000/answer/{{id}}">...Read More</a></p>
+						</div>
+						<span class=" text-muted align-text-bottom">
+							Created on: {{date}} |
+						</span>
+						<span class=" text-muted align-text-bottom">
+							By: <a href="#">{{name}}</a>
+						</span>
+					</div>
+				</div>
+				{% endfor %}
+
+			</div>
+		</div>
+	</div>
+
+
+
+
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
+	<script type="text/javascript" src="{% static 'tags.js'%}"></script>
+</body>
+</html>

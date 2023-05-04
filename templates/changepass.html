@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>EditProfile</title>
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+	<style type="text/css">
+	</style>
+</head>
+<body>
+	<nav class="navbar navbar-dark navbar-expand-md bg-dark shadow">
+	  <div class="container">
+	    <a class="navbar-brand" href="#">Student Community</a>
+	    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+	      <span class="navbar-toggler-icon"></span>
+	    </button>
+	    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+	      <ul class="navbar-nav me-5 mb-2 mb-lg-0 d-md-none ">
+	        <li class="nav-item">
+	          <a class="nav-link" aria-current="page" href="/home">Home</a>
+	        </li>
+	        <li class="nav-item">
+	          <a class="nav-link active" href="/profile">Profile</a>
+	        </li>
+	        <li class="nav-item">
+	          <a class="nav-link" href="/announcements">Announcements</a>
+	        </li>
+	        <li class="nav-item">
+	          <a class="nav-link">FAQ</a>
+	        </li>
+	        <li class="nav-item">
+	          <a class="nav-link">Help</a>
+	        </li>
+	      </ul>
+	      <ul class="navbar-nav mb-2 mb-lg-0 ms-auto">
+	      	<li>
+	      		<button class="btn btn-outline-danger" type="submit"><a class="dropdown-item" href="/">LogOut</a></button>
+	      	</li>
+	      </ul>
+	    </div>
+	  </div>
+	</nav>
+
+	<div class="container">
+		<div class="row ">
+			<div class="d-flex flex-column col-md-3 col-lg-2 bg-dark d-none d-md-block border-end border-primary">
+				<div class="sticky-top">
+				    <hr class="text-light">
+				    <ul class="nav nav-pills flex-column">
+				      <li class="nav-item text-light">
+				        <a href="/home" class="nav-link text-light" aria-current="page">
+				          Home
+				        </a>
+				      </li>
+				      <li>
+				        <a href="/profile" class="nav-link active text-white">
+				          
+				          Profile
+				        </a>
+				      </li>
+				      <li>
+				        <a href="/announcements" class="nav-link text-white">
+				         
+				          Announcements
+				        </a>
+				      </li>
+				      <li>
+				        <a href="#" class="nav-link text-white">
+				          
+				          FAQ
+				        </a>
+				      </li>
+				      <li>
+				        <a href="#" class="nav-link text-white">
+				          
+				          Help
+				        </a>
+				      </li>
+				    </ul>
+				    <div class="dropdown p-3">
+				      <hr class="text-light">
+				      <a href="#" class="d-flex align-items-center text-white text-decoration-none dropdown-toggle" id="dropdownUser1" data-bs-toggle="dropdown" aria-expanded="false">
+				        <img src="https://github.com/mdo.png" alt="" width="32" height="32" class="rounded-circle me-2">
+				        <strong>{{name}}</strong>
+				      </a>
+				      <ul class="dropdown-menu dropdown-menu-dark text-small shadow" aria-labelledby="dropdownUser1">
+				        <li><a class="dropdown-item" href="/editprofile">Settings</a></li>
+				        <li><hr class="dropdown-divider"></li>
+				        <li><a class="dropdown-item" href="/">Sign out</a></li>
+				      </ul>
+				    </div>
+				</div>   
+			    
+			</div>
+			<div class="column col-md-9 col-lg-10 p-3 bg-dark">
+				<div class="col-6 mx-auto text-dark">
+					
+					<form class="m-5 p-4 bg-light rounded">
+						<h2 class="text-center">Change Password</h2>
+					  <div class="mb-3 col-12">
+						<label for="OldPass" class="form-label">Old Password</label>
+						<input type="Password" class="form-control"  aria-describedby="emailHelp">
+					  </div>
+					  <div class="mb-3">
+					    <label for="NewPass" class="form-label">New Password</label>
+					    <input type="Password" class="form-control"  aria-describedby="emailHelp">
+					  </div>
+					  <div class="mb-3">
+					    <label for="ConPass" class="form-label">Confirm Password</label>
+					    <input type="Password" class="form-control"  aria-describedby="emailHelp">
+					  </div>
+					  
+					  <div class="d-grid col-6 mx-auto">
+					  	<button type="submit" class="btn btn-primary"><a class="dropdown-item" href="/profile">Submit</a></button>
+					  </div>
+					</form>
+				</div>
+				
+
+			</div>
+
+			
+		</div>
+	</div>
+
+
+
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
+	<script type="text/javascript" src="pro-pic.js"></script>
+</body>
+</html>

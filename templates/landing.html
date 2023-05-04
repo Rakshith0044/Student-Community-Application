@@ -1,0 +1,65 @@
+{% load static %}
+<!doctype html>
+<html lang="en" class="h-100">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <title>College Community</title>
+    <!-- Bootstrap core CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+    <style type="text/css">
+		body{
+			background-image: url('{%static "images/Abs_bg.jpg" %}');
+		}
+	</style>
+  </head>
+  
+  <body class="">
+
+  	<div class=" px-4 py-5 text-center shadow bg-dark text-light" >
+		<img class="d-block mx-auto mb-4" src="{% static 'images/com_logo.png' %}" alt="" width="245" height="155">
+		<h1 class="display-5 fw-bold">Join Your Community!</h1>
+		<div class="col-lg-6 mx-auto">
+		  <p class="lead mb-4">Join your colleges community of students and Stay updated with the latest happenings. Clear your doubts, share knowledge with your peers and grow collectively.<br>Create your Account Today!</p>
+		  <div class="d-grid gap-2 d-sm-flex justify-content-sm-center">
+		    <a type="button" class="btn btn-outline-info btn-lg me-sm-3 fw-bold px-4 gap-3" href="signup">Sign Up</a>
+		    <a type="button" href="login" class="btn btn-outline-light btn-lg px-4">Login</a>
+		  </div>
+		</div>
+	</div>
+
+	<div class="below container rounded pb-4 bg-light">
+	    <div class="p-5 m-4 bg-light rounded-3">
+	      <div class="container-fluid m-3 py-5">
+	        <h1 class="display-5 fw-bold">Localized And Concentrated</h1>
+	        <p class="col-md-8 fs-4">Only see Posts relevant to your College and Ask Questions specific and related to you College. Get help from peers and seniors who have already gone through similar experiences</p>
+	        <!-- <button class="btn btn-primary btn-lg" type="button">Example button</button> -->
+	      </div>
+	    </div>
+
+	    <div class="row align-items-md-stretch rounded-3">
+	      <div class="col-md-6">
+	        <div class="h-100 p-5 text-white bg-dark rounded-3">
+	          <h2 class="pb-3">Placement Help</h2>
+	          <p class="fs-5">Share your interview experience and Ask Questions about the process or results of a company. Pool your knowledge and crack your dream company!</p>
+	        </div>
+	      </div>
+	      <div class="col-md-6">
+	        <div class="h-100 p-5 bg-light border border-dark rounded-3">
+	          <h2 class="pb-3">Stay Updated</h2>
+	          <p class="fs-5">Stay updated on announcements and the latest happening in your college. Do not Miss another event or competition!</p>
+	        </div>
+	      </div>
+	    </div>
+	    <footer class="pt-3 mt-4 text-muted border-top border-dark">
+	    </footer>
+
+	    
+  	</div>
+  	
+  	
+
+  	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
+  </body>
+</html>
