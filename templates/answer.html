@@ -27,13 +27,7 @@
 				<li class="nav-item">
 				  <a class="nav-link" href="/faq">FAQ</a>
 				</li>
-				<li class="nav-item">
-				  <a class="nav-link">Help</a>
-				</li>
 			  </ul>
-	      <form class="d-flex mx-auto col-lg-4 mb-2" role="search">
-	        <input class="form-control ms-lg-5" type="search" placeholder="Search" aria-label="Search">
-	      </form>
 	      <ul class="navbar-nav mb-2 mb-lg-0 ms-auto">
 	      	<li>
 	      		<button class="btn btn-outline-danger" type="submit"><a class="dropdown-item" href="/">LogOut</a></button>
@@ -70,12 +64,6 @@
 						  <a href="/faq" class="nav-link text-white">
 							
 							FAQ
-						  </a>
-						</li>
-						<li>
-						  <a href="#" class="nav-link text-white">
-							
-							Help
 						  </a>
 						</li>
 					  </ul>
@@ -262,7 +250,7 @@
 			if (post_active===1)
 				post_likes+=1;
 			else if(post_active===0)
-				post_likes+=1;
+				post_likes-=1;
 
 			post_like_display.textContent=post_likes;
 
