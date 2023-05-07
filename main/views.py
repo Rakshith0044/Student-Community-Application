@@ -532,5 +532,13 @@ def searchPlacement(request):
         return render(request,'placement_help.html',value)
     return redirect('placement_help')
 
+def faq(request,*args,**kwargs):
 
+    db = mysql.connector.connect(host="localhost",user="root",password="1234",database = "cca_db")
+
+    cur = db.cursor()
+    cur.execute("""select user_name from user where user_id=%s""",([request.user.id]))
+    name = cur.fetchall()[0][0]
+    db.close()
+    return render(request,'faq.html',{'name':name})
 

@@ -41,6 +41,7 @@ urlpatterns = [
     path('searchHome',searchHome),
     path('searchAnnouncement',searchAnnouncement),
     path('searchInterview',searchInterview),
-    path('searchPlacement',searchPlacement)
+    path('searchPlacement',searchPlacement),
+    path('faq',faq)
 
 ]
