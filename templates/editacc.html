@@ -116,7 +116,7 @@
 					    <form class="m-5 p-2" method="POST" action="editacc">{%csrf_token%}
 						  <div class="mb-3 col-12">
 							<label for="Name" class="form-label">UserName</label>
-							<input type="text" name="name" class="form-control"  aria-describedby="emailHelp" value={{user_name}}>
+							<input type="text" name="name" class="form-control"  aria-describedby="emailHelp" value="{{user_name}}">
 							<div id="emailHelp" class="form-text">UserName will Your Display Name</div>
 						  </div>
 						  <div class="mb-3">

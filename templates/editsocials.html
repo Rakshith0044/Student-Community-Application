@@ -116,19 +116,19 @@
 					    <form class="m-5 p-2" method="POST" action="editsocials">{%csrf_token%}
 						  <div class="mb-3 col-12">
 							<label for="LinkedIn" class="form-label">LinkedIn</label>
-							<input name="linkdin" value={{linkdin}} type="url" class="form-control"  aria-describedby="emailHelp">
+							<input name="linkdin" value="{{linkdin}}" type="url" class="form-control"  aria-describedby="emailHelp">
 						  </div>
 						  <div class="mb-3">
 						    <label for="github" class="form-label">GitHub</label>
-						    <input name="github" value={{github}} type="url" class="form-control"  aria-describedby="emailHelp">
+						    <input name="github" value="{{github}}" type="url" class="form-control"  aria-describedby="emailHelp">
 						  </div>
 						  <div class="mb-3">
 						    <label for="FaceBook" class="form-label">FaceBook</label>
-						    <input name="facebook" value={{facebook}} type="url" class="form-control">
+						    <input name="facebook" value="{{facebook}}" type="url" class="form-control">
 						  </div>
 						  <div class="mb-3">
 						    <label for="LeetCode" class="form-label">LeetCode</label>
-						    <input name="leetcode" value={{leetcode}} type="url" class="form-control">
+						    <input name="leetcode" value="{{leetcode}}" type="url" class="form-control">
 						  </div>
 						  <div class="d-grid col-6 mx-auto btn btn-primary">
 						  	<input type="submit" class="btn btn-primary" value="Submit">

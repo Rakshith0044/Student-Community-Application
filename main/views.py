@@ -43,7 +43,7 @@ def landing(request,*args,**kwargs):
     return render(request,'landing.html')
 
 def post_to_db(title,hashtag,description,user_id,categ_id):
-    db = mysql.connector.connect(host="localhost",user="root",password="1234",database = "cca_db")
+    db = mysql.connector.connect(host="localhost",user="root",password="qwerty@69420",database = "cca_db")
 
     cur = db.cursor()
     cur.execute("insert into post(title,description,post_like,post_dislike,categ_id,user_id) values(%s,%s,%s,%s,%s,%s)",(title,description,0,0,categ_id,user_id,))
@@ -72,7 +72,7 @@ def post_to_db(title,hashtag,description,user_id,categ_id):
 
 
 def db_to_post(categ_id,user_id,flag,isTags):
-    db = mysql.connector.connect(host="localhost",user="root",password="1234",database = "cca_db")
+    db = mysql.connector.connect(host="localhost",user="root",password="qwerty@69420",database = "cca_db")
 
     cur = db.cursor()
     cur.execute("""select COUNT(*),answer.post_id as count from answer,post where answer.post_id=post.post_id and post.categ_id=%s GROUP BY answer.post_id""",([categ_id]))
@@ -124,7 +124,7 @@ def home(request,*args,**kwargs):
 
 def answer(request,id,*args,**kwargs):
     
-    db = mysql.connector.connect(host="localhost",user="root",password="1234",database = "cca_db")
+    db = mysql.connector.connect(host="localhost",user="root",password="qwerty@69420",database = "cca_db")
     cur = db.cursor()
 
     if request.method=="POST":
@@ -166,7 +166,7 @@ def replyPost(request,id,*args,**kwargs):
     ans_id = id 
     user_id = request.user.id
 
-    db = mysql.connector.connect(host="localhost",user="root",password="1234",database = "cca_db")
+    db = mysql.connector.connect(host="localhost",user="root",password="qwerty@69420",database = "cca_db")
     cur = db.cursor()
 
     cur.execute("insert into reply(content,reply_like,reply_dislike,ans_id,user_id) values(%s,0,0,%s,%s)",(reply_content,ans_id,user_id))
@@ -259,12 +259,14 @@ def signup(request,*args,**kwargs):
         college=request.POST['college']
         print(username,password,email,college)
         if User.objects.filter(username=email).exists(): #checks if the user requests
-             messages.info(request,'Email Already Registered')
-             return render(request,'signup.html')  #redirects the register page again
+            print("byeeee")
+            messages.info(request,'Email Already Registered')
+            return render(request,'signup.html')  #redirects the register page again
         else:
+            print("heloooo")
             user = User.objects.create_user(username=email, password=password)
             user.save() #its saves the users id and password in the databasse
-            db = mysql.connector.connect(host="localhost",user="root",password="1234",database = "cca_db")
+            db = mysql.connector.connect(host="localhost",user="root",password="qwerty@69420",database = "cca_db")
 
             cur = db.cursor()
             cur.execute("select id from auth_user order by id")
@@ -279,13 +281,20 @@ def signup(request,*args,**kwargs):
 
 
 def profile(request,*args,**kwargs):
-    db = mysql.connector.connect(host="localhost",user="root",password="1234",database = "cca_db")
+    db = mysql.connector.connect(host="localhost",user="root",password="qwerty@69420",database = "cca_db")
 
     cur = db.cursor()
 
     user_id=request.user.id
+
+    cur.execute("select name,branch,about,0,user_name from user where user_id=%s",[user_id])
+    details=cur.fetchall()[0]
     cur.execute("select name,branch,about,count(*),user_name from user,post where user.user_id=%s and user.user_id=post.user_id group by user.user_id",([user_id]))
-    user_details = cur.fetchall()[0]
+    try:
+        user_details = cur.fetchall()[0]
+    except:
+        user_details=details 
+    #user_details = cur.fetchall()[0]
     
     cur.execute("select count(*) from answer where user_id=%s group by user_id;",([user_id]))
     try:
@@ -319,7 +328,7 @@ def profile(request,*args,**kwargs):
     return render(request,'profile.html',value)
     
 def update_user(name,gender,college,branch,location,birthday,about,user_id):
-    db = mysql.connector.connect(host="localhost",user="root",password="1234",database = "cca_db")
+    db = mysql.connector.connect(host="localhost",user="root",password="qwerty@69420",database = "cca_db")
 
     cur = db.cursor()
     cur.execute("update user set name=%s,gender=%s,college=%s, branch=%s ,location=%s,dob=%s,about=%s where user_id=%s",(name,gender,college,branch,location,birthday,about,user_id,))
@@ -328,7 +337,7 @@ def update_user(name,gender,college,branch,location,birthday,about,user_id):
 
 def changepass(request,*args,**kwargs):
     
-    db = mysql.connector.connect(host="localhost",user="root",password="1234",database = "cca_db")
+    db = mysql.connector.connect(host="localhost",user="root",password="qwerty@69420",database = "cca_db")
 
     cur = db.cursor()
     cur.execute("select user_name from user where user_id=%s",(request.user.id,))
@@ -356,7 +365,7 @@ def editprofile(request,*args,**kwargs):
             gender="male"
         update_user(name,gender,college,branch,location,birthday,about,request.user.id)
         return redirect('profile') 
-    db = mysql.connector.connect(host="localhost",user="root",password="1234",database = "cca_db")
+    db = mysql.connector.connect(host="localhost",user="root",password="qwerty@69420",database = "cca_db")
 
     cur = db.cursor()
     cur.execute("select * from user where user_id=%s",(request.user.id,))
@@ -378,7 +387,7 @@ def editprofile(request,*args,**kwargs):
     return render(request,'editprofile.html',my_dicti)
 
 def editacc(request,*args,**kwargs):
-    db = mysql.connector.connect(host="localhost",user="root",password="1234",database = "cca_db")
+    db = mysql.connector.connect(host="localhost",user="root",password="qwerty@69420",database = "cca_db")
     cur = db.cursor()
     
     if request.method=="POST":
@@ -404,7 +413,7 @@ def editacc(request,*args,**kwargs):
     return render(request,'editacc.html',my_dict)
 
 def update_socials(linkdin,github,facebook,leetcode,user_id):
-    db = mysql.connector.connect(host="localhost",user="root",password="1234",database = "cca_db")
+    db = mysql.connector.connect(host="localhost",user="root",password="qwerty@69420",database = "cca_db")
 
     cur = db.cursor()
     cur.execute("select user_id from social_links")
@@ -427,30 +436,33 @@ def editsocials(request,*args,**kwargs):
         leetcode=request.POST['leetcode']
         update_socials(linkdin,github,facebook,leetcode,request.user.id)
         return redirect('profile') 
-    db = mysql.connector.connect(host="localhost",user="root",password="1234",database = "cca_db")
+    db = mysql.connector.connect(host="localhost",user="root",password="qwerty@69420",database = "cca_db")
 
     my_dicti={}
     cur = db.cursor()
     cur.execute("select user.user_id,linkedin,github,facebook,leetcode,name,user_name from social_links,user where user.user_id=social_links.user_id and user.user_id=%s",(request.user.id,))
+    s=()
     try:
         s=cur.fetchall()[0]
     
-        my_dicti={
+        
+    except :
+        cur.execute("select user_id,null,null,null,null,name,user_name from user where user_id=%s",(request.user.id,))
+        s=cur.fetchall()[0]
+    my_dicti={
                 'name':s[5],
                 'user_name':s[6],
                 'linkdin':s[1],
                 'github':s[2],
                 'facebook':s[3],
                 'leetcode':s[4]
-        }
-    except : 
-        pass
+    }
     db.close()
     return render(request,'editsocials.html',my_dicti)
 
 
 def likeHandling(request,content,content_id,like,*args,**kwargs):
-    db = mysql.connector.connect(host="localhost",user="root",password="1234",database = "cca_db")
+    db = mysql.connector.connect(host="localhost",user="root",password="qwerty@69420",database = "cca_db")
     cur = db.cursor()
     
     if content=="Post":
@@ -463,7 +475,7 @@ def likeHandling(request,content,content_id,like,*args,**kwargs):
 
     return HttpResponse('success')
 def dbtags_to_post(categ_id,user_id,flag,tag):
-    db = mysql.connector.connect(host="localhost",user="root",password="1234",database = "cca_db")
+    db = mysql.connector.connect(host="localhost",user="root",password="qwerty@69420",database = "cca_db")
 
     cur = db.cursor()
     cur.execute("""select tag_id from tag where tag_name=%s""",([tag]))
@@ -534,7 +546,7 @@ def searchPlacement(request):
 
 def faq(request,*args,**kwargs):
 
-    db = mysql.connector.connect(host="localhost",user="root",password="1234",database = "cca_db")
+    db = mysql.connector.connect(host="localhost",user="root",password="qwerty@69420",database = "cca_db")
 
     cur = db.cursor()
     cur.execute("""select user_name from user where user_id=%s""",([request.user.id]))
