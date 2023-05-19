@@ -84,9 +84,9 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'cca_db',
-        'USER':'rakshith',
-        'PASSWORD':'rakshith',
-        'HOST':'db4free.net',
+        'USER':'root',
+        'PASSWORD':'qwerty@69420',
+        'HOST':'localhost',
         'PORT':'3306',
         'OPTIONS': {
           'autocommit': True,
