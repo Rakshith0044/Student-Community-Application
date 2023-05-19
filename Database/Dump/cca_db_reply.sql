@@ -27,14 +27,17 @@ DROP TABLE IF EXISTS `reply`;
 CREATE TABLE `reply` (
   `reply_id` int NOT NULL AUTO_INCREMENT,
   `content` tinytext,
-  `reply_like` int DEFAULT NULL,
+  `reply_like` int DEFAULT '0',
   `reply_dislike` int DEFAULT NULL,
   `post_dt` datetime DEFAULT CURRENT_TIMESTAMP,
   `ans_id` int DEFAULT NULL,
+  `user_id` int DEFAULT NULL,
   PRIMARY KEY (`reply_id`),
   KEY `ans_id` (`ans_id`),
-  CONSTRAINT `reply_ibfk_1` FOREIGN KEY (`ans_id`) REFERENCES `answer` (`ans_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+  KEY `user_id_idx` (`user_id`),
+  CONSTRAINT `reply_ibfk_1` FOREIGN KEY (`ans_id`) REFERENCES `answer` (`ans_id`),
+  CONSTRAINT `user_id` FOREIGN KEY (`user_id`) REFERENCES `user` (`user_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -43,6 +46,7 @@ CREATE TABLE `reply` (
 
 LOCK TABLES `reply` WRITE;
 /*!40000 ALTER TABLE `reply` DISABLE KEYS */;
+INSERT INTO `reply` VALUES (1,'No',0,0,'2023-04-09 19:07:52',14,1),(2,'Ok',0,0,'2023-04-09 19:24:23',14,1),(3,'dont join',0,0,'2023-04-09 21:23:37',14,1),(4,'Dont join',0,0,'2023-04-09 21:27:31',14,1),(5,'damm',0,0,'2023-04-09 21:35:57',14,3),(6,'Nice',0,0,'2023-04-09 21:37:45',12,3),(7,'PG or Hostel ?',0,0,'2023-04-10 20:02:21',19,3),(8,'PG',0,0,'2023-04-10 20:03:30',19,1),(9,'Welcome',0,0,'2023-05-07 19:16:57',20,3);
 /*!40000 ALTER TABLE `reply` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -55,4 +59,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2023-03-08 18:51:46
+-- Dump completed on 2023-05-19 19:12:17

@@ -48,7 +48,7 @@ CREATE TABLE `user` (
 
 LOCK TABLES `user` WRITE;
 /*!40000 ALTER TABLE `user` DISABLE KEYS */;
-INSERT INTO `user` VALUES (1,'Prashanth','prashanth','pran19cs@cmrit.ac.in','male','cmrit','cse',2018,7,NULL,'BANGLORE','2001-04-06','cmrit  '),(3,'HackerEarth','hackerearth','hackerearth@cmrit.ac.in','male','cmrit','IT',NULL,NULL,NULL,'BANGALORE','2022-12-22','HackerEarth Admin is here!!\r\nYo Yo');
+INSERT INTO `user` VALUES (1,'Prashanth N','prashanth','pran19cs@cmrit.ac.in','male','cmrit','cse-IT',2018,7,NULL,'BANGLORE','2001-04-06','I am an cmritan'),(3,'HackerEarth','hackerearth','hackerearth@cmrit.ac.in','male','cmrit','IT',NULL,NULL,NULL,'BANGALORE','2022-12-22','HackerEarth Admin is here!!\r\nYo Yo');
 /*!40000 ALTER TABLE `user` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -61,4 +61,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2023-03-08 18:51:47
+-- Dump completed on 2023-05-19 19:12:21

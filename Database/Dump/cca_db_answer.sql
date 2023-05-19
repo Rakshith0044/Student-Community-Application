@@ -38,7 +38,7 @@ CREATE TABLE `answer` (
   KEY `user_id` (`user_id`),
   CONSTRAINT `answer_ibfk_1` FOREIGN KEY (`post_id`) REFERENCES `post` (`post_id`),
   CONSTRAINT `answer_ibfk_2` FOREIGN KEY (`user_id`) REFERENCES `user` (`user_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=19 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=22 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -47,7 +47,7 @@ CREATE TABLE `answer` (
 
 LOCK TABLES `answer` WRITE;
 /*!40000 ALTER TABLE `answer` DISABLE KEYS */;
-INSERT INTO `answer` VALUES (11,'join it guys it will be interesting !!',0,0,NULL,'2022-12-21 17:11:34',35,3),(12,'The course was very good, there are some 100-150 computers in the computer labs with a good air conditioning system, yes there are lots of research activities happening in the college from all the departments\r\n\r\nWe have a very good placement cell, they try to get maximum placement for us and also they push us and prepare us to crack it.\r\nThe campus hiring process, and then pore over to find students who best match the requirements of the placement opportunities through on/off campus hiring, internships or projects.\r\n\r\nWe have some of the best faculties in the city and some being iit graduates adds an impetus to the learning.\r\n\r\nEvery student wishes to have a wonderful postal experience.\r\nYes we play sports like eveydoay alslo we conduct some of the sports events even we give some prizies to the winner it was an wonderful experience playig sports at lur college weekly we will be having a spoet hr',0,0,NULL,'2022-12-22 00:09:15',53,3),(13,'1. It Can Help Boost Your Resume\r\n2. You\'ll Get to Meet New People\r\n3. You Can Find or Build a Community\r\n4. You\'ll Develop New Skills\r\n5. You\'ll Get to Work With Diverse Groups of People\r\n6. You Can Build a Network\r\n7. It\'s Fun!',0,0,NULL,'2022-12-22 00:14:41',54,1),(14,'Hi friend join our club',0,0,NULL,'2022-12-22 00:18:10',14,3),(15,'good',0,0,NULL,'2022-12-22 14:15:38',35,1),(16,'hi ',0,0,NULL,'2022-12-22 15:51:39',51,1),(17,'like',0,0,NULL,'2023-01-02 10:59:33',61,1),(18,'like',0,0,NULL,'2023-01-02 11:01:46',52,3);
+INSERT INTO `answer` VALUES (11,'join it guys it will be interesting !!',0,0,NULL,'2022-12-21 17:11:34',35,3),(12,'The course was very good, there are some 100-150 computers in the computer labs with a good air conditioning system, yes there are lots of research activities happening in the college from all the departments\r\n\r\nWe have a very good placement cell, they try to get maximum placement for us and also they push us and prepare us to crack it.\r\nThe campus hiring process, and then pore over to find students who best match the requirements of the placement opportunities through on/off campus hiring, internships or projects.\r\n\r\nWe have some of the best faculties in the city and some being iit graduates adds an impetus to the learning.\r\n\r\nEvery student wishes to have a wonderful postal experience.\r\nYes we play sports like eveydoay alslo we conduct some of the sports events even we give some prizies to the winner it was an wonderful experience playig sports at lur college weekly we will be having a spoet hr',0,0,NULL,'2022-12-22 00:09:15',53,3),(13,'1. It Can Help Boost Your Resume\r\n2. You\'ll Get to Meet New People\r\n3. You Can Find or Build a Community\r\n4. You\'ll Develop New Skills\r\n5. You\'ll Get to Work With Diverse Groups of People\r\n6. You Can Build a Network\r\n7. It\'s Fun!',0,0,NULL,'2022-12-22 00:14:41',54,1),(14,'Hi friend join our club',1,0,NULL,'2022-12-22 00:18:10',14,3),(15,'good',0,0,NULL,'2022-12-22 14:15:38',35,1),(16,'hi ',0,0,NULL,'2022-12-22 15:51:39',51,1),(17,'like',0,0,NULL,'2023-01-02 10:59:33',61,1),(18,'like',0,0,NULL,'2023-01-02 11:01:46',52,3),(19,'No',0,0,NULL,'2023-04-10 20:00:50',55,1),(20,'Thanks, it helped me to crack campus placement .\r\n',0,0,NULL,'2023-05-07 19:15:43',48,1);
 /*!40000 ALTER TABLE `answer` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -60,4 +60,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2023-03-08 18:51:46
+-- Dump completed on 2023-05-19 19:12:19

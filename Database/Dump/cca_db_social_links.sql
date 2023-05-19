@@ -41,7 +41,7 @@ CREATE TABLE `social_links` (
 
 LOCK TABLES `social_links` WRITE;
 /*!40000 ALTER TABLE `social_links` DISABLE KEYS */;
-INSERT INTO `social_links` VALUES (1,'https://www.linkedin.com/in/prashanth-nm-1b44201ab/','https://github.com/PrashanthNM','https://facebook.com/Prashanth_NM','https://leetcode.com/PRASHANTH_NM/'),(3,'https://www.linkedin.com/in/prashanth-nm-1b44201ab/','https://github.com/PrashanthNM','https://facebook.com/Prashanth_NM','https://leetcode.com/PRASHANTH_NM/');
+INSERT INTO `social_links` VALUES (1,'https://www.linkedin.com/in/prashanth-nm-1b44201ab/','https://github.com/PrashanthNM/','https://facebook.com/Prashanth_NM/','https://leetcode.com/PRASHANTH_NM/'),(3,'https://www.linkedin.com/in/prashanth-nm-1b44201ab/','https://github.com/PrashanthNM','https://facebook.com/Prashanth_NM','https://leetcode.com/PRASHANTH_NM/');
 /*!40000 ALTER TABLE `social_links` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -54,4 +54,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2023-03-08 18:51:44
+-- Dump completed on 2023-05-19 19:12:19
